@@ -42,7 +42,7 @@ public class Student {
 	  this.email=email;
   }
   
-  public String getCourse(String course) {
+  public String getCourse() {
 	  return course;
   }
   public void setCourse(String course) {
