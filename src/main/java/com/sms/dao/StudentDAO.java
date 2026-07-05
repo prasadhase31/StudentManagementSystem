@@ -2,6 +2,9 @@ package com.sms.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.sms.model.Student;
 import com.sms.util.DBConnection;
@@ -35,6 +38,43 @@ public class StudentDAO {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        
+        public List<Student> getAllStudents() {
+
+            List<Student> list = new ArrayList<>();
+
+            try {
+
+                Connection con = DBConnection.getConnection();
+
+                String sql = "SELECT * FROM student";
+
+                PreparedStatement ps = con.prepareStatement(sql);
+
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+
+                    Student student = new Student();
+
+                    student.setId(rs.getInt("id"));
+                    student.setName(rs.getString("name"));
+                    student.setEmail(rs.getString("email"));
+                    student.setCourse(rs.getString("course"));
+
+                    list.add(student);
+                }
+
+                rs.close();
+                ps.close();
+                con.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return list;
         }
 
         return status;
