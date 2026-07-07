@@ -81,4 +81,39 @@ public class StudentDAO {
 
         return list;
     }
+ // SELECT BY ID
+    public Student getStudentById(int id) {
+
+        Student student = new Student();
+
+        try {
+
+            Connection con = DBConnection.getConnection();
+
+            String sql = "SELECT * FROM student WHERE id=?";
+
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setEmail(rs.getString("email"));
+                student.setCourse(rs.getString("course"));
+            }
+
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return student;
+    }
 }
