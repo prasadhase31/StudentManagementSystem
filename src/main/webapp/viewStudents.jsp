@@ -69,6 +69,8 @@ a{
 <th>Name</th>
 <th>Email</th>
 <th>Course</th>
+<th>Action</th>
+
 
 </tr>
 
@@ -92,6 +94,10 @@ for(Student s:list){
 <td><%= s.getEmail() %></td>
 
 <td><%= s.getCourse() %></td>
+
+<td>
+    <a href="editStudent?id=<%= s.getId() %>">Edit</a>
+</td>
 
 </tr>
 
