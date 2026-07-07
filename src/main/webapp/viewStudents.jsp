@@ -96,7 +96,18 @@ for(Student s:list){
 <td><%= s.getCourse() %></td>
 
 <td>
-    <a href="editStudent?id=<%= s.getId() %>">Edit</a>
+
+<a href="editStudent?id=<%= s.getId() %>">Edit</a>
+
+&nbsp;&nbsp;
+
+<a href="deleteStudent?id=<%= s.getId() %>"
+onclick="return confirm('Are you sure you want to delete this student?');">
+
+Delete
+
+</a>
+
 </td>
 
 </tr>
