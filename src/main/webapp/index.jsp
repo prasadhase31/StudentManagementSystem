@@ -2,59 +2,44 @@
 pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
 
 <meta charset="UTF-8">
 
 <title>Student Management System</title>
 
-<style>
-
-body{
-
-font-family:Arial;
-
-background:#f2f2f2;
-
-text-align:center;
-
-margin-top:100px;
-
-}
-
-a{
-
-text-decoration:none;
-
-background:green;
-
-color:white;
-
-padding:15px 25px;
-
-margin:10px;
-
-border-radius:5px;
-
-display:inline-block;
-
-}
-
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<h1>Student Management System</h1>
+<div class="container mt-5">
 
-<a href="addStudent.jsp">Add Student</a>
+<div class="card shadow">
 
-<a href="viewStudents">View Students</a>
+<div class="card-header bg-primary text-white">
+
+<h2 class="text-center">Student Management System</h2>
+
+</div>
+
+<div class="card-body text-center">
+
+<a href="addStudent.jsp" class="btn btn-success btn-lg m-2">
+Add Student
+</a>
+
+<a href="viewStudents" class="btn btn-primary btn-lg m-2">
+View Students
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
-
 </html>
