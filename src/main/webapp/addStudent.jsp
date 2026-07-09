@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -7,69 +7,66 @@
 <meta charset="UTF-8">
 <title>Add Student</title>
 
-<style>
-
-body{
-    font-family: Arial;
-    background:#f4f4f4;
-}
-
-.container{
-    width:400px;
-    margin:50px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px gray;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin-top:10px;
-    margin-bottom:15px;
-}
-
-button{
-    width:100%;
-    padding:10px;
-    background:green;
-    color:white;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover{
-    background:darkgreen;
-}
-
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<div class="container">
+<div class="container mt-5">
 
-<h2 align="center">Add Student</h2>
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h3 class="text-center">Add Student</h3>
+
+</div>
+
+<div class="card-body">
 
 <form action="addStudent" method="post">
 
-    <label>Name</label>
-    <input type="text" name="name" required>
+<div class="mb-3">
+<label class="form-label">Student Name</label>
+<input type="text" name="name" class="form-control" required>
+</div>
 
-    <label>Email</label>
-    <input type="email" name="email" required>
+<div class="mb-3">
+<label class="form-label">Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
 
-    <label>Course</label>
-    <input type="text" name="course" required>
+<div class="mb-3">
+<label class="form-label">Course</label>
+<input type="text" name="course" class="form-control" required>
+</div>
 
-    <button type="submit">
-        Add Student
-    </button>
+<div class="text-center">
+
+<button class="btn btn-success">
+Save Student
+</button>
+
+<a href="viewStudents" class="btn btn-primary">
+View Students
+</a>
+
+</div>
 
 </form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
