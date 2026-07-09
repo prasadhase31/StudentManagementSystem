@@ -57,27 +57,45 @@ a{
 
 <body>
 
-<div class="container">
+<body class="bg-light">
 
-<h2>Student List</h2>
+<div class="container mt-5">
 
-<table>
+    <div class="card shadow">
 
-<tr>
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
 
-<th>ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Course</th>
-<th>Action</th>
+            <h3>Student Management System</h3>
 
+            <a href="addStudent.jsp" class="btn btn-light">
+                + Add Student
+            </a>
 
-</tr>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover table-striped">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th width="180">Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
 
 <%
 
-List<Student> list =
-(List<Student>)request.getAttribute("studentList");
+List<Student> list=(List<Student>)request.getAttribute("studentList");
 
 if(list!=null){
 
@@ -87,22 +105,26 @@ for(Student s:list){
 
 <tr>
 
-<td><%= s.getId() %></td>
+<td><%=s.getId()%></td>
 
-<td><%= s.getName() %></td>
+<td><%=s.getName()%></td>
 
-<td><%= s.getEmail() %></td>
+<td><%=s.getEmail()%></td>
 
-<td><%= s.getCourse() %></td>
+<td><%=s.getCourse()%></td>
 
 <td>
 
-<a href="editStudent?id=<%= s.getId() %>">Edit</a>
+<a href="editStudent?id=<%=s.getId()%>"
+class="btn btn-warning btn-sm">
 
-&nbsp;&nbsp;
+Edit
 
-<a href="deleteStudent?id=<%= s.getId() %>"
-onclick="return confirm('Are you sure you want to delete this student?');">
+</a>
+
+<a href="deleteStudent?id=<%=s.getId()%>"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Are you sure you want to delete this student?')">
 
 Delete
 
@@ -120,13 +142,16 @@ Delete
 
 %>
 
-</table>
+                </tbody>
 
-<br>
+            </table>
 
-<a href="addStudent.jsp">Add New Student</a>
+        </div>
+
+    </div>
 
 </div>
 
+</body>
 </body>
 </html>
